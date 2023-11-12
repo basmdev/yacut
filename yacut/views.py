@@ -15,7 +15,7 @@ def index_view():
         short_id = form.custom_id.data or get_unique_short_id()
         existing_short_id = URLMap.query.filter_by(short=short_id).first()
         if existing_short_id:
-            flash(f"Предложенный вариант короткой ссылки уже существует.")
+            flash("Предложенный вариант короткой ссылки уже существует.")
         else:
             url_map = URLMap(original=original_url, short=short_id)
             db.session.add(url_map)
