@@ -1,37 +1,53 @@
-Клонировать репозиторий и перейти в него в командной строке:
 
-```
-git clone 
-```
+# Укоротитель ссылок YaCut
 
-```
-cd yacut
-```
+Укоротитель длинных ссылок YaCut, с возможностью указания собственного идентификатора ссылки.
 
-Cоздать и активировать виртуальное окружение:
 
-```
-python3 -m venv venv
-```
+## Возможности
 
-* Если у вас Linux/macOS
+- Укорачивание длинных ссылок
+- Указание собственного идентификатора ссылки
 
-    ```
-    source venv/bin/activate
-    ```
 
-* Если у вас windows
+## Установка
 
-    ```
-    source venv/scripts/activate
-    ```
+Склонируйте проект:
 
-Установить зависимости из файла requirements.txt:
-
-```
-python3 -m pip install --upgrade pip
+```bash
+  git clone git@github.com:MAGFRG/yacut.git
 ```
 
+Перейдите в папку проекта:
+
+```bash
+  cd yacut
 ```
-pip install -r requirements.txt
+
+Создайте и активируйте виртуальное окружение:
+
+```bash
+  python -m venv venv
+  source venv/Scripts/activate
 ```
+
+
+Установите зависимости:
+
+```bash
+  pip install -r requirements.txt
+```
+
+## Технологии
+
+- Python
+- SQL Alchemy
+- Flask
+
+
+
+
+## Автор
+
+- [Магомет Басханов](https://github.com/MAGFRG/)
+
