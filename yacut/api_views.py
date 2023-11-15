@@ -33,7 +33,6 @@ def add_short_url():
             "Длина короткой ссылки не должна превышать 16 символов",
             HTTPStatus.BAD_REQUEST,
         )
-    short_url = URLMap(short=custom_id)
     short_url = URLMap(short=custom_id, original=data["url"])
     db.session.add(short_url)
     db.session.commit()

@@ -13,6 +13,7 @@ def get_unique_short_id() -> str:
     return short_id
 
 
-def is_valid_custom_id(custom_id):
-    pattern = re.compile("^[a-zA-Z0-9]+$")
+def is_valid_custom_id(custom_id) -> bool:
+    """Проверяет валидность короткого идентификатора ссылки."""
+    pattern: str = re.compile("^[a-zA-Z0-9]+$")
     return bool(pattern.match(custom_id)) and len(custom_id) <= 16
