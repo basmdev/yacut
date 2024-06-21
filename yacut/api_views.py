@@ -16,12 +16,12 @@ def add_short_url():
         raise InvalidAPIUsage("Отсутствует тело запроса")
     if "url" not in data:
         raise InvalidAPIUsage(
-            '"url" является обязательным полем!', HTTPStatus.BAD_REQUEST
+            '"url" является обязательным полем', HTTPStatus.BAD_REQUEST
         )
     custom_id = data.get("custom_id") or get_unique_short_id()
     if URLMap.query.filter_by(short=custom_id).first() is not None:
         raise InvalidAPIUsage(
-            "Предложенный вариант короткой ссылки уже существует."
+            "Предложенный вариант короткой ссылки уже существует"
         )
     if not is_valid_custom_id(custom_id):
         raise InvalidAPIUsage(
@@ -48,5 +48,5 @@ def add_short_url():
 def get_short_url(short_id):
     short_url = URLMap.query.filter_by(short=short_id).first()
     if short_url is None:
-        raise InvalidAPIUsage("Указанный id не найден", HTTPStatus.NOT_FOUND)
+        raise InvalidAPIUsage("Указанный ID не найден", HTTPStatus.NOT_FOUND)
     return jsonify({"url": short_url.original}), HTTPStatus.OK
